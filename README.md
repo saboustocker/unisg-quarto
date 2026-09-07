@@ -5,10 +5,10 @@ Quarto extension with University of St.Gallen formats for websites, slides, manu
 ## Install
 
 ```bash
-quarto add YOUR_GITHUB_USER/unisg-quarto
+quarto add saboustocker/unisg-quarto
 ```
 
-Or from a local clone:
+Or from a local clone, if you want to make your own edits:
 
 ```bash
 quarto add /path/to/unisg-quarto
@@ -44,30 +44,12 @@ Copy the folder you need into a new repository and edit `_quarto.yml`. Each one 
 
 `project-template/slides/showcase.qmd` and `slides-template/showcase.qmd` render every slide class the theme provides. Start there when writing a deck.
 
-## What the extension ships
+## Included in extension
 
 - Official UniSG logo variants in colour, black and white
 - SCSS for pages, slides, manuscripts and books
 - APA CSL and an APA-style Word reference document
 - `ggplot2` and `matplotlib` theme helpers in `_extensions/unisg/plotting/`
-
-## Slides
-
-Backgrounds are set as classes on a heading:
-
-```markdown
-# Section {.section-header-bg .subtitle-section-header}
-
-## Quote slide {.quote-slide-bg}
-
-## Blue slide {.blue-slide-bg}
-```
-
-Available surfaces: `.section-header-bg`, `.quote-slide-bg`, `.image-slide-bg`, `.green-slide-bg`, `.darkgreen-slide-bg`, `.blue-slide-bg`, `.red-slide-bg`, `.yellow-slide-bg`.
-
-Text, blockquote and table classes are listed in the showcase deck.
-
-The UniSG logo is drawn in the footer band of every slide and switches between the colour and white variant with the background. Footer text is not rendered, since the logo occupies that band.
 
 ## Repository layout
 
