@@ -1,0 +1,3 @@
+# Methods
+
+Describe the design, the sample, and the estimation strategy. Report the power analysis used to fix the sample size [@cohen1988].

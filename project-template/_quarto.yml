@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "slides/*.qmd"
+    - "manuscript/*.qmd"
+    - "reports/*.qmd"
+
+website:
+  title: "Project Title"
+  image: assets/logos/HSG_Logo_EN_RGB.svg
+  navbar:
+    logo: assets/logos/HSG_Logo_EN_RGB_Weiss.svg
+    background: "#0a5f2d"
+    foreground: "#ffffff"
+    left:
+      - href: index.qmd
+        text: Overview
+      - href: slides/index.qmd
+        text: Slides
+      - href: manuscript/index.qmd
+        text: Manuscripts
+      - href: reports/index.qmd
+        text: Analysis
+  page-footer:
+    left: "University of St.Gallen"
+    right: "Built with Quarto"
+
+format:
+  unisg-html:
+    toc: true
+    code-fold: true
+    code-tools: true
+    page-layout: full
+
+execute:
+  freeze: auto
+  echo: false
+  warning: false
+  message: false

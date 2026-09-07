@@ -1,0 +1,43 @@
+title: UniSG Quarto Theme
+author: Richard Conrardy
+version: 0.1.0
+quarto-required: ">=1.7.0"
+contributes:
+  metadata:
+    project:
+      brand: brand.yml
+  formats:
+    common:
+      csl: csl/apa.csl
+      filters:
+        - filters/unisg.lua
+    html:
+      toc: true
+      toc-depth: 3
+      code-fold: true
+      code-tools: true
+      code-copy: true
+      fig-responsive: true
+      link-external-newwindow: true
+      theme: [cosmo, styles/unisg-pages.scss]
+    revealjs:
+      theme: [default, styles/unisg-slides.scss]
+      slide-number: true
+      progress: true
+      transition: fade
+      width: 1600
+      height: 900
+      chalkboard: true
+      preview-links: auto
+    pdf:
+      documentclass: article
+      papersize: a4
+      fontsize: 11pt
+      linestretch: 1.2
+      colorlinks: true
+      geometry:
+        - margin=25mm
+    docx:
+      toc: true
+      number-sections: false
+      reference-doc: assets/templates/unisg-apa-reference.docx

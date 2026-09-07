@@ -1,0 +1,178 @@
+/*-- scss:defaults --*/
+
+$hsg-gruen: #00802f;
+$hsg-dunkelgruen: #0a5f2d;
+$hsg-beige: #e1d7c3;
+$hsg-blau: #73a5af;
+$hsg-korall: #eb6969;
+$hsg-gelb: #fff04b;
+$hsg-ink: #1f2933;
+$hsg-light: #f8f6f1;
+
+$primary: $hsg-gruen;
+$secondary: $hsg-blau;
+$success: $hsg-dunkelgruen;
+$info: $hsg-blau;
+$warning: $hsg-gelb;
+$danger: $hsg-korall;
+$light: $hsg-light;
+$dark: $hsg-dunkelgruen;
+
+$body-bg: #ffffff;
+$body-color: $hsg-ink;
+$link-color: $hsg-dunkelgruen;
+$link-hover-color: $hsg-gruen;
+$headings-color: $hsg-dunkelgruen;
+$font-family-sans-serif: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+$border-radius: 0.15rem;
+
+$navbar-bg: $hsg-dunkelgruen;
+$navbar-fg: #ffffff;
+$navbar-hl: $hsg-beige;
+$sidebar-bg: $hsg-light;
+$sidebar-fg: $hsg-ink;
+$sidebar-hl: $hsg-gruen;
+$footer-bg: $hsg-light;
+$footer-fg: $hsg-dunkelgruen;
+
+$font-size-root: 16px;
+$toc-font-size: 0.85rem;
+
+/*-- scss:rules --*/
+
+h1 {
+  color: $hsg-gruen;
+  font-weight: 650;
+}
+
+h2,
+h3,
+h4 {
+  color: $hsg-dunkelgruen;
+  font-weight: 600;
+}
+
+a {
+  color: $hsg-dunkelgruen;
+  text-decoration-color: rgba($hsg-blau, 0.6);
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: $hsg-gruen;
+  text-decoration-color: $hsg-gruen;
+}
+
+.sidebar-title,
+.sidebar navbar-brand {
+  color: $hsg-dunkelgruen;
+  font-weight: 600;
+}
+
+#quarto-sidebar {
+  border-right: 1px solid rgba($hsg-dunkelgruen, 0.15);
+}
+
+#quarto-sidebar a,
+#quarto-sidebar .sidebar-link,
+#quarto-sidebar .sidebar-item-container a,
+#quarto-sidebar .sidebar-navigation a {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.nav-page a,
+.nav-page .nav-page-text {
+  text-decoration: none;
+}
+
+#quarto-sidebar .sidebar-item-container .active,
+#quarto-sidebar .sidebar-item-container .show > .nav-link,
+#quarto-sidebar .sidebar-item-container .sidebar-link > code {
+  color: $hsg-gruen;
+  font-weight: 600;
+}
+
+#quarto-sidebar .chapter-number {
+  color: $hsg-blau;
+}
+
+#quarto-margin-sidebar .nav-link.active,
+#TOC .nav-link.active {
+  color: $hsg-gruen;
+  border-left: 2px solid $hsg-gruen;
+}
+
+.quarto-title-block .quarto-title-banner {
+  background: linear-gradient(135deg, $hsg-dunkelgruen 0%, $hsg-gruen 100%);
+  color: #ffffff;
+}
+
+.nav-page .nav-page-text,
+.nav-page a {
+  color: $hsg-dunkelgruen;
+}
+
+.nav-page a:hover {
+  color: $hsg-gruen;
+}
+
+blockquote,
+.blockquote {
+  color: $hsg-dunkelgruen;
+  border-left: 4px solid $hsg-dunkelgruen;
+  padding-left: 1rem;
+}
+
+.callout {
+  border-radius: $border-radius;
+}
+
+.callout.callout-style-default > .callout-header {
+  background-color: rgba($hsg-beige, 0.65);
+}
+
+.unisg-box {
+  color: $hsg-dunkelgruen;
+  font-size: 0.95em;
+  background-color: rgba($hsg-beige, 0.45);
+  border: 1px solid rgba($hsg-dunkelgruen, 0.45);
+  border-left: 0.35rem solid $hsg-dunkelgruen;
+  border-radius: $border-radius;
+  padding: 1.2rem;
+}
+
+.unisg-card {
+  border: 1px solid rgba($hsg-dunkelgruen, 0.18);
+  border-top: 0.35rem solid $hsg-gruen;
+  border-radius: $border-radius;
+  padding: 1.1rem 1.2rem;
+  background: #ffffff;
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.045);
+}
+
+.figure-caption,
+figcaption,
+caption {
+  color: $hsg-dunkelgruen;
+  font-size: 0.9em;
+}
+
+code {
+  color: $hsg-dunkelgruen;
+}
+
+.cell-output,
+.cell-output-display {
+  border-left: 3px solid rgba($hsg-blau, 0.6);
+  padding-left: 0.75rem;
+}
+
+#refs {
+  font-size: 0.95em;
+}
+
+.csl-entry {
+  margin-bottom: 0.6rem;
+}

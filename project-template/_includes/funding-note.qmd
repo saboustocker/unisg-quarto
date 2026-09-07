@@ -1,0 +1,3 @@
+::: {.unisg-box}
+**Funding.** Add funding information here.
+:::

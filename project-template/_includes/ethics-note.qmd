@@ -1,0 +1,3 @@
+::: {.unisg-box}
+**Ethics.** Add ethics approval, consent, or data protection information here.
+:::

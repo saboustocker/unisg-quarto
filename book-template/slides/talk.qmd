@@ -1,0 +1,36 @@
+---
+title: "Book Title"
+subtitle: "Companion slides"
+author: "Author Name"
+date: last-modified
+format: unisg-revealjs
+---
+
+# Introduction {.section-header-bg .subtitle-section-header}
+
+## What the book covers
+
+- One bullet per chapter
+- Keep the deck short and point at the book for detail
+
+## A central claim {.quote-slide-bg}
+
+::: {.quote-p}
+State the main argument of the book here.
+:::
+
+::: {.source-p}
+Chapter 1
+:::
+
+# Findings {.section-header-bg .subtitle-section-header}
+
+## Main result {.green-slide-bg}
+
+::: {.white-text-p}
+Put the headline finding on a coloured slide.
+:::
+
+## Where to read more
+
+See `chapters/` in the book for the full argument and the references.

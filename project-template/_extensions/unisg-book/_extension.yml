@@ -1,0 +1,41 @@
+title: UniSG Book
+author: Richard Conrardy
+version: 0.1.0
+quarto-required: ">=1.7.0"
+contributes:
+  formats:
+    common:
+      csl: ../unisg/csl/apa.csl
+      filters:
+        - ../unisg/filters/unisg.lua
+    html:
+      toc: true
+      toc-depth: 3
+      toc-title: "On this page"
+      number-sections: true
+      code-fold: true
+      code-tools: false
+      code-copy: true
+      fig-responsive: true
+      link-external-newwindow: true
+      citations-hover: true
+      footnotes-hover: true
+      theme: [cosmo, styles/unisg-book.scss]
+      grid:
+        sidebar-width: 300px
+        body-width: 1500px
+        margin-width: 260px
+      page-layout: full
+    pdf:
+      documentclass: scrbook
+      papersize: a4
+      fontsize: 11pt
+      linestretch: 1.2
+      colorlinks: true
+      number-sections: true
+      toc-depth: 3
+      geometry:
+        - inner=30mm
+        - outer=25mm
+        - top=25mm
+        - bottom=25mm

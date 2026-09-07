@@ -1,0 +1,28 @@
+---
+title: "Analysis Report"
+format:
+  unisg-html:
+    toc: true
+    code-fold: true
+---
+
+## Analysis status
+
+Put analysis output here. Write narrative results in this report and save generated figures and tables to `outputs/`.
+
+The extension ships plotting themes for `ggplot2` and `matplotlib`.
+
+```{r}
+#| label: example-r
+#| eval: false
+source("../_extensions/unisg/plotting/R/unisg-theme.R")
+```
+
+```python
+# Non-executable example: copy into a Python analysis script or notebook.
+import sys
+sys.path.append("_extensions/unisg/plotting/python")
+from unisg_theme import apply_unisg_matplotlib
+
+apply_unisg_matplotlib()
+```

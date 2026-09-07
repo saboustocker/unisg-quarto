@@ -1,0 +1,15 @@
+# Introduction
+
+State the research question and the scope of the study here. Citations, cross-references and numbered sections work as in any Quarto book [@tversky1974].
+
+## Background
+
+Summarise the literature the study builds on [@example2026; @cohen1988].
+
+## Structure of the book
+
+- Methods describes the design and the estimation strategy.
+- Results reports the estimates.
+- Conclusion summarises the findings.
+
+The book is written in Quarto [@quarto2024].

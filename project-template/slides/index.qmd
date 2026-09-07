@@ -1,0 +1,23 @@
+---
+title: "Slides"
+subtitle: "Presentation decks for this project"
+format:
+  unisg-html:
+    title-block-banner: true
+    toc: false
+---
+
+Use this page to list all slide decks that belong to the project.
+
+::: {.unisg-card}
+### Available slide decks
+
+- [Example presentation](intro.html)  
+  Short starter deck using the UniSG slide theme.
+- [Slide style showcase](showcase.html)  
+  Every slide class the theme provides, with the colour rules for each surface.
+:::
+
+## Add another deck
+
+Create a new `.qmd` file in `slides/`, use `format: unisg-revealjs`, and add it to the list above.

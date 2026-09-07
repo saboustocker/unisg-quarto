@@ -1,0 +1,46 @@
+---
+title: "Presentation Title"
+subtitle: "University of St.Gallen"
+author: "Author Name"
+date: last-modified
+format:
+  unisg-revealjs: default
+---
+
+# Section {.section-header-bg .subtitle-section-header}
+
+## Normal slide
+
+This slide uses the reusable `unisg-revealjs` format. Basic slides use the colored UniSG logo.
+
+::: {.center-middle}
+A centered block.
+:::
+
+## Quote slide {.quote-slide-bg}
+
+::: {.quote-p}
+A quote or central statement can go here.
+:::
+
+::: {.source-p}
+Source or note
+:::
+
+## Blue slide {.blue-slide-bg}
+
+::: {.white-text-p}
+Text on a blue background. Colored slides use the white UniSG logo.
+:::
+
+## Red slide {.red-slide-bg}
+
+::: {.white-text-p}
+Text on a red/coral background.
+:::
+
+## Green slide {.green-slide-bg}
+
+::: {.white-text-p}
+Text on a green background.
+:::

@@ -1,0 +1,15 @@
+# Preface {.unnumbered}
+
+Use this page for the preface: what the book covers, who it is for, and how to read it.
+
+::: {.unisg-card}
+**Structure:** chapters live in `chapters/`, the bibliography in `references.bib`, and shared UniSG styling comes from the `unisg-book` extension.
+:::
+
+## How to render
+
+```bash
+quarto render          # all formats
+quarto render --to unisg-book-html
+quarto render --to unisg-book-pdf
+```

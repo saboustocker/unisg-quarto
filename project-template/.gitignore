@@ -1,0 +1,17 @@
+_site/
+.quarto/
+_freeze/
+.Rproj.user/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+outputs/models/*.rds
+outputs/models/*.pkl
+data/raw/*
+!data/raw/README.md
+data/processed/*
+!data/processed/README.md
+
+/.quarto/
+**/*.quarto_ipynb

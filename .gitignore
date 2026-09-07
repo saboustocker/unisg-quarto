@@ -1,0 +1,12 @@
+_site/
+_book/
+_output/
+.quarto/
+_freeze/
+*_files/
+.Rproj.user/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+**/*.quarto_ipynb

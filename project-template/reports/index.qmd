@@ -1,0 +1,34 @@
+---
+title: "Analysis"
+subtitle: "Analysis reports and reproducible output"
+format:
+  unisg-html:
+    title-block-banner: true
+    toc: false
+---
+
+Use this page to collect all rendered analysis reports for the project. Use the pages listed here for readable results, diagnostics, robustness checks, and appendices.
+
+::: {.unisg-card}
+### Main analysis report
+
+Project-level descriptive statistics, main models, and core figures.
+
+[Open report](analysis-report.qmd)
+:::
+
+::: {.unisg-card}
+### Robustness checks
+
+Optional placeholder for sensitivity analyses, alternative model specifications, and diagnostic checks.
+
+Add a file such as `reports/robustness-checks.qmd` and link it here.
+:::
+
+::: {.unisg-card}
+### Supplementary output
+
+Optional placeholder for extended tables, generated figures, and supplementary analyses.
+
+Add a file such as `reports/supplement.qmd` and link it here.
+:::

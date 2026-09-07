@@ -1,0 +1,32 @@
+---
+title: "Manuscript Title"
+subtitle: "Working paper"
+author:
+  - name: Author Name
+    affiliations:
+      - name: University of St.Gallen
+bibliography: references.bib
+format:
+  unisg-html:
+    theme: [cosmo, ../_extensions/unisg/styles/unisg-manuscript.scss]
+  unisg-pdf: default
+  unisg-docx: default
+abstract: |
+  Add the abstract here.
+---
+
+## Introduction
+
+Start the manuscript here.
+
+## Method
+
+## Results
+
+## Discussion
+
+{{< include ../_includes/ethics-note.qmd >}}
+
+{{< include ../_includes/funding-note.qmd >}}
+
+## References

@@ -1,0 +1,251 @@
+---
+title: "Slide Style Showcase"
+subtitle: "Every UniSG slide class, with the proposed fixes applied"
+author: "Author Name"
+date: last-modified
+format:
+  unisg-revealjs: default
+---
+
+# Backgrounds {.section-header-bg .subtitle-section-header}
+
+## Normal slide
+
+The default surface is beige with ink body text and a green heading. The rule
+under the heading ties the right-aligned `h2` to the left-aligned body.
+
+- Bullets carry a green marker and 0.45em spacing
+- `inline code` sits in a tinted green chip
+- **Bold** text picks up dark green
+
+::: {.smalltext-p}
+`.smalltext-p` — was HSG blue on beige at 1.7:1, now dark green at 5.5:1.
+:::
+
+::: {.rightalign-p}
+`.rightalign-p` — same change, right aligned.
+:::
+
+## Centered block
+
+::: {.center-middle}
+`.center-middle` centers a block vertically and horizontally.
+
+The minimum height is 60vh so the block clears the logo band.
+:::
+
+## Quote slide {.quote-slide-bg}
+
+::: {.quote-p}
+`.quote-p` now uses white on dark green with a yellow rule, instead of HSG blue
+at 3.1:1.
+:::
+
+::: {.source-p}
+`.source-p` — beige on dark green, 5.5:1
+:::
+
+## Callout {.image-slide-bg}
+
+::: {.callout-slide-p}
+`.callout-slide-p` on the white `.image-slide-bg` surface. The invalid
+`font-weight: 110` is now 400.
+:::
+
+::: {.source-p-blue}
+`.source-p-blue` — dark green, right aligned
+:::
+
+# Color surfaces {.section-header-bg .subtitle-section-header}
+
+## Green slide {.green-slide-bg}
+
+::: {.white-text-p}
+White on HSG green is 5.1:1 and stays white. The logo switches to the white
+variant.
+:::
+
+## Dark green slide {.darkgreen-slide-bg}
+
+::: {.white-text-p}
+`.darkgreen-slide-bg` is new. White on dark green is 7.8:1, the strongest of the
+brand surfaces.
+:::
+
+## Blue slide {.blue-slide-bg}
+
+::: {.white-text-p}
+White text and the white logo on HSG blue, at 2.5:1.
+:::
+
+## Red slide {.red-slide-bg}
+
+::: {.white-text-p}
+White text on coral, at 3.1:1.
+:::
+
+## Yellow slide {.yellow-slide-bg}
+
+::: {.white-text-p}
+The yellow surface had no text rules at all, so white text was invisible at
+1.2:1. Ink on yellow is 12.1:1, and the logo stays the colour version.
+:::
+
+# Content elements {.section-header-bg .subtitle-section-header}
+
+## Blockquote and citation
+
+> The default block quote sits on a tinted green panel with a solid green rule,
+> upright rather than italic.
+
+::: {.bib-p}
+Author, A. (2024). *Title of the work.* Journal of Something, 12(3), 45–67.
+:::
+
+## Blockquote colours
+
+::: {.bq-green}
+> `.bq-green`
+:::
+
+::: {.bq-darkgreen}
+> `.bq-darkgreen`
+:::
+
+::: {.bq-blue}
+> `.bq-blue`
+:::
+
+::: {.bq-red}
+> `.bq-red`
+:::
+
+::: {.bq-yellow}
+> `.bq-yellow`
+:::
+
+## Paragraph colours
+
+::: {.ink-p}
+ink-p, the default body colour
+:::
+
+::: {.darkgreen-p}
+darkgreen-p
+:::
+
+::: {.green-p}
+green-p
+:::
+
+::: {.blue-p}
+blue-p, 1.7:1 on beige, use it on a dark surface
+:::
+
+::: {.red-p}
+red-p, 2.2:1 on beige, use it on a dark surface
+:::
+
+::: {.yellow-p}
+yellow-p, 1.2:1 on beige, use it on a dark surface
+:::
+
+## Paragraph colours on dark green {.darkgreen-slide-bg}
+
+::: {.white-text-p}
+white-text-p
+:::
+
+::: {.beige-p}
+beige-p
+:::
+
+::: {.blue-p}
+blue-p
+:::
+
+::: {.red-p}
+red-p
+:::
+
+::: {.yellow-p}
+yellow-p
+:::
+
+## Table, striped
+
+::: {.striped}
+| Specification | Coefficient | Std. error | n |
+|---------------|------------:|-----------:|--:|
+| Baseline      |       0.412 |      0.038 | 1,204 |
+| With controls |       0.377 |      0.041 | 1,204 |
+| Fixed effects |       0.298 |      0.052 | 1,180 |
+:::
+
+::: {.smalltext-p}
+`.striped` — dark green header, body rows alternating white and light green.
+:::
+
+## Table, plain
+
+::: {.plain}
+| Specification | Coefficient | Std. error | n |
+|---------------|------------:|-----------:|--:|
+| Baseline      |       0.412 |      0.038 | 1,204 |
+| With controls |       0.377 |      0.041 | 1,204 |
+| Fixed effects |       0.298 |      0.052 | 1,180 |
+:::
+
+::: {.smalltext-p}
+`.plain` — beige throughout, dark green horizontal rules matching the header.
+:::
+
+## Code
+
+```r
+model <- lm(outcome ~ treatment + controls, data = df)
+summary(model)
+```
+
+::: {.smalltext-p}
+Code blocks sit on white with a green left rule, instead of the default reveal
+shadow.
+:::
+
+## Tabset
+
+::: {.panel-tabset}
+
+### Estimates
+
+Tabs are now underlined rather than filled, so they read as navigation instead
+of buttons.
+
+### Diagnostics
+
+The active tab is green and bold; inactive tabs are dark green text.
+
+:::
+
+## Question {.green-slide-bg}
+
+::: {.question-slide-p}
+`.question-slide-p` — white on green for a discussion prompt.
+:::
+
+## Colour reference
+
+| Surface | Text colour | Ratio |
+|---------|-------------|------:|
+| Beige `#e1d7c3` | ink `#1f2933` | 9.9 |
+| Beige `#e1d7c3` | dark green `#0a5f2d` | 5.5 |
+| Green `#00802f` | white | 5.1 |
+| Dark green `#0a5f2d` | white | 7.8 |
+| Dark green `#0a5f2d` | beige `#e1d7c3` | 5.5 |
+| Blue `#73a5af` | white | 2.5 |
+| Coral `#eb6969` | white | 3.1 |
+| Yellow `#fff04b` | ink `#1f2933` | 12.1 |
+
+::: {.smalltext-p}
+HSG blue is never used for text: 1.7:1 on beige, 3.1:1 on dark green.
+:::

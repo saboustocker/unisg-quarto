@@ -1,0 +1,47 @@
+project:
+  type: book
+  output-dir: _book
+  render:
+    - "*.qmd"
+    - chapters/*.qmd
+    - slides/*.qmd
+
+book:
+  title: "Book Title"
+  subtitle: "UniSG Quarto book"
+  author: "Author Name"
+  date: today
+  cover-image: _extensions/unisg/assets/logos/HSG_Logo_EN_RGB.svg
+  favicon: _extensions/unisg/assets/logos/unisg-logo.png
+  search: true
+  sidebar:
+    logo: _extensions/unisg/assets/logos/HSG_Logo_EN_RGB.svg
+    style: docked
+    collapse-level: 1
+  chapters:
+    - index.qmd
+    - chapters/introduction.qmd
+    - chapters/methods.qmd
+    - chapters/results.qmd
+    - chapters/conclusion.qmd
+    - references.qmd
+  appendices:
+    - chapters/appendix-data.qmd
+  page-footer:
+    left: |
+      University of St.Gallen &middot; Author Name, Institute &middot; licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+    right: "Built with Quarto"
+
+brand: false
+
+bibliography: references.bib
+
+format:
+  unisg-book-html:
+    theme: [cosmo, _extensions/unisg-book/styles/unisg-book.scss]
+
+execute:
+  freeze: auto
+  echo: false
+  warning: false
+  message: false

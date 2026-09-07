@@ -1,0 +1,68 @@
+/*-- scss:defaults --*/
+$hsg-gruen: #00802f;
+$hsg-dunkelgruen: #0a5f2d;
+$hsg-beige: #e1d7c3;
+$hsg-blau: #73a5af;
+$hsg-korall: #eb6969;
+$hsg-ink: #1f2933;
+
+$primary: $hsg-dunkelgruen;
+$secondary: $hsg-blau;
+$body-bg: #ffffff;
+$body-color: $hsg-ink;
+$link-color: $hsg-dunkelgruen;
+$headings-color: $hsg-dunkelgruen;
+$font-family-sans-serif: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$font-family-serif: Georgia, "Times New Roman", serif;
+$font-family-monospace: Menlo, Monaco, Consolas, monospace;
+
+/*-- scss:rules --*/
+
+body {
+  font-size: 11.5pt;
+  line-height: 1.55;
+}
+
+.quarto-title-block .title {
+  color: $hsg-dunkelgruen;
+  font-weight: 650;
+}
+
+.quarto-title-meta {
+  color: rgba($hsg-ink, 0.75);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $hsg-dunkelgruen;
+}
+
+.abstract {
+  border-left: 4px solid $hsg-gruen;
+  padding-left: 1rem;
+  color: $hsg-ink;
+}
+
+blockquote {
+  border-left: 4px solid $hsg-dunkelgruen;
+  color: $hsg-dunkelgruen;
+}
+
+.figure-caption,
+.table-caption,
+figcaption {
+  color: $hsg-dunkelgruen;
+  font-size: 0.9em;
+}
+
+#refs {
+  font-size: 0.95em;
+}
+
+.manuscript-note {
+  background-color: rgba($hsg-beige, 0.45);
+  border-left: 4px solid $hsg-dunkelgruen;
+  padding: 1rem;
+}

@@ -1,0 +1,21 @@
+---
+title: "Manuscripts"
+subtitle: "Manuscript versions and downloads"
+format:
+  unisg-html:
+    title-block-banner: true
+    toc: false
+---
+
+Use this page to list all manuscripts, working papers, supplementary materials, and export formats for this project.
+
+::: {.unisg-card}
+### Available manuscripts
+
+- [Working paper / main manuscript](working-paper.html)  
+  [PDF](working-paper.pdf) · [Word / DOCX](working-paper.docx) · [Source](working-paper.qmd)
+:::
+
+## Add another manuscript
+
+Create a new `.qmd` file in `manuscript/`, use the UniSG manuscript formats, and add it to the list above.

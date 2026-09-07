@@ -1,0 +1,21 @@
+---
+title: "Project Title"
+subtitle: "UniSG Quarto project page"
+format:
+  unisg-html:
+    title-block-banner: true
+---
+
+## Overview
+
+Use this page as the public or semi-public project overview. Link to slides, manuscripts, analysis reports, and outputs from here.
+
+::: {.unisg-card}
+**Project structure:** Quarto website at the root, raw and processed data in `data/`, generated figures and tables in `outputs/`, and slides, manuscripts and analysis reports in their own folders.
+:::
+
+## Quick links
+
+- [Slides overview](slides/)
+- [Manuscripts overview](manuscript/)
+- [Analysis overview](reports/)

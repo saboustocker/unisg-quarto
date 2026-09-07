@@ -1,0 +1,3 @@
+# Data appendix {#sec-appendix-data}
+
+Supplementary tables, variable definitions, and data sources.
