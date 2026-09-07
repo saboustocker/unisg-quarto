@@ -425,6 +425,17 @@ section.level2.yellow-slide-bg .white-text-p {
 
 section.level2.yellow-slide-bg h2 { border-bottom-color: rgba($hsg-ink, 0.3); }
 
+.reveal .slides h2:empty,
+.reveal .slides section.level2 h2:empty,
+.reveal .slides h1:empty,
+.reveal .slides h3:empty,
+.reveal .slides h4:empty {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+
 /* Tables */
 .reveal table {
   font-size: 0.7em;
