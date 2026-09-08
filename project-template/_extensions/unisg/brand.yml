@@ -2,16 +2,6 @@ meta:
   name: University of St.Gallen
   link: https://www.unisg.ch
 
-logo:
-  images:
-    full-color: assets/logos/HSG_Logo_EN_RGB.svg
-    full-black: assets/logos/HSG_Logo_EN_RGB_Schwarz.svg
-    full-white: assets/logos/HSG_Logo_EN_RGB_Weiss.svg
-    legacy-png: assets/logos/unisg-logo.png
-  small: full-color
-  medium: full-color
-  large: full-color
-
 color:
   palette:
     hsg-green: "#00802f"

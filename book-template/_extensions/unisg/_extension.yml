@@ -21,6 +21,7 @@ contributes:
       link-external-newwindow: true
       theme: [cosmo, styles/unisg-pages.scss]
     revealjs:
+      logo: assets/logos/HSG_Logo_EN_RGB.svg
       theme: [default, styles/unisg-slides.scss]
       slide-number: true
       progress: true
