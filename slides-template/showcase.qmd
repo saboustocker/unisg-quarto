@@ -327,3 +327,442 @@ Some introductory text above the figure.
 ![A wide image below text, with a caption](images/wide.svg)
 
 # Q&A
+
+## Layered table and figures {.image-slide-bg}
+
+::: {.r-stack}
+
+:::: {.fragment .fade-out}
+
+::::: {.columns}
+
+:::::: {.column width="30%"}
+
+| Metric | Value |
+|:-------|------:|
+| Unique technologies | 901 |
+| Silhouette | 0.44 |
+| Davies--Bouldin | 0.92 |
+| Calinski--Harabasz | 459.45 |
+| Trustworthiness (10D) | 0.92 |
+| Inertia | 421.49 |
+
+: Final clustering solution, k = 16.
+
+::::::
+
+:::::: {.column width="70%"}
+
+![A square figure beside the metrics table](images/square.svg)
+
+::::::
+
+:::::
+
+::::
+
+:::: {.fragment .fade-in-then-out}
+
+::::: {.columns}
+
+:::::: {.column width="30%"}
+
+| Technology cluster | Mentions | Peak year | Peak share | *p* |
+| --- | ---: | ---: | ---: | ---: |
+| Algorithms & Recommendations | 103 | 2026 | 7.2% | .604 |
+| AR, VR & Robots | 54 | 2026 | 6.0% | < .001 |
+| Auctions & Pricing | 26 | 2007 | 5.4% | .004 |
+| Computers & Software | 134 | 2000 | 21.5% | < .001 |
+| Crypto & Fintech | 95 | 2026 | 10.5% | .034 |
+| E-Commerce | 81 | 2000 | 11.6% | .001 |
+| Gaming & Digital Platforms | 106 | 2026 | 9.4% | .002 |
+| Generative AI | 225 | 2026 | 30.2% | < .001 |
+| Internet & Broadcasting | 127 | 2000 | 29.4% | < .001 |
+| Mobility & Transportation | 27 | 2000 | 1.8% | .942 |
+| Search & Advertising | 99 | 2000 | 12.2% | .012 |
+| Smartphones & Apps | 126 | 2017 | 11.9% | .041 |
+| Social Media | 182 | 2016 | 24.1% | < .001 |
+| Streaming, Audio & Video | 57 | 2026 | 4.6% | .153 |
+| Tracking & Wearables | 56 | 2014 | 4.5% | .388 |
+| Other | 85 | 2014 | 7.3% | .440 |
+
+: Total mentions, peak year and peak share of each technology cluster.
+
+::::::
+
+:::::: {.column width="70%"}
+
+![A wide figure above a second figure](images/wide.svg)
+
+![The second stacked figure](images/square.svg)
+
+::::::
+
+:::::
+
+::::
+
+:::
+
+## Oversized table alone
+
+| Technology cluster | Mentions | Peak year | Peak share | *p* |
+| --- | ---: | ---: | ---: | ---: |
+| Algorithms & Recommendations | 103 | 2026 | 7.2% | .604 |
+| AR, VR & Robots | 54 | 2026 | 6.0% | < .001 |
+| Auctions & Pricing | 26 | 2007 | 5.4% | .004 |
+| Computers & Software | 134 | 2000 | 21.5% | < .001 |
+| Crypto & Fintech | 95 | 2026 | 10.5% | .034 |
+| E-Commerce | 81 | 2000 | 11.6% | .001 |
+| Gaming & Digital Platforms | 106 | 2026 | 9.4% | .002 |
+| Generative AI | 225 | 2026 | 30.2% | < .001 |
+| Internet & Broadcasting | 127 | 2000 | 29.4% | < .001 |
+| Mobility & Transportation | 27 | 2000 | 1.8% | .942 |
+| Search & Advertising | 99 | 2000 | 12.2% | .012 |
+| Smartphones & Apps | 126 | 2017 | 11.9% | .041 |
+| Social Media | 182 | 2016 | 24.1% | < .001 |
+| Streaming, Audio & Video | 57 | 2026 | 4.6% | .153 |
+| Tracking & Wearables | 56 | 2014 | 4.5% | .388 |
+| Other | 85 | 2014 | 7.3% | .440 |
+
+: A sixteen row table that must shrink to fit the slide, caption included.
+
+## Table right, figure left 30/70
+
+::: {.columns}
+
+:::: {.column width="30%"}
+
+![A square figure](images/square.svg)
+
+
+::::
+
+:::: {.column width="70%"}
+
+| Technology cluster | Mentions | Peak year | Peak share | *p* |
+| --- | ---: | ---: | ---: | ---: |
+| Algorithms & Recommendations | 103 | 2026 | 7.2% | .604 |
+| AR, VR & Robots | 54 | 2026 | 6.0% | < .001 |
+| Auctions & Pricing | 26 | 2007 | 5.4% | .004 |
+| Computers & Software | 134 | 2000 | 21.5% | < .001 |
+| Crypto & Fintech | 95 | 2026 | 10.5% | .034 |
+| E-Commerce | 81 | 2000 | 11.6% | .001 |
+| Gaming & Digital Platforms | 106 | 2026 | 9.4% | .002 |
+| Generative AI | 225 | 2026 | 30.2% | < .001 |
+| Internet & Broadcasting | 127 | 2000 | 29.4% | < .001 |
+| Mobility & Transportation | 27 | 2000 | 1.8% | .942 |
+| Search & Advertising | 99 | 2000 | 12.2% | .012 |
+| Smartphones & Apps | 126 | 2017 | 11.9% | .041 |
+| Social Media | 182 | 2016 | 24.1% | < .001 |
+| Streaming, Audio & Video | 57 | 2026 | 4.6% | .153 |
+| Tracking & Wearables | 56 | 2014 | 4.5% | .388 |
+| Other | 85 | 2014 | 7.3% | .440 |
+
+: Sixteen row cluster table.
+
+
+::::
+
+:::
+
+## Table right, text left 70/30
+
+::: {.columns}
+
+:::: {.column width="70%"}
+
+Text beside the table. A few lines of body copy so the column has some
+realistic height to it.
+
+- Point one
+- Point two
+- Point three
+
+
+::::
+
+:::: {.column width="30%"}
+
+| Technology cluster | Mentions | Peak year | Peak share | *p* |
+| --- | ---: | ---: | ---: | ---: |
+| Algorithms & Recommendations | 103 | 2026 | 7.2% | .604 |
+| AR, VR & Robots | 54 | 2026 | 6.0% | < .001 |
+| Auctions & Pricing | 26 | 2007 | 5.4% | .004 |
+| Computers & Software | 134 | 2000 | 21.5% | < .001 |
+| Crypto & Fintech | 95 | 2026 | 10.5% | .034 |
+| E-Commerce | 81 | 2000 | 11.6% | .001 |
+| Gaming & Digital Platforms | 106 | 2026 | 9.4% | .002 |
+| Generative AI | 225 | 2026 | 30.2% | < .001 |
+| Internet & Broadcasting | 127 | 2000 | 29.4% | < .001 |
+| Mobility & Transportation | 27 | 2000 | 1.8% | .942 |
+| Search & Advertising | 99 | 2000 | 12.2% | .012 |
+| Smartphones & Apps | 126 | 2017 | 11.9% | .041 |
+| Social Media | 182 | 2016 | 24.1% | < .001 |
+| Streaming, Audio & Video | 57 | 2026 | 4.6% | .153 |
+| Tracking & Wearables | 56 | 2014 | 4.5% | .388 |
+| Other | 85 | 2014 | 7.3% | .440 |
+
+: Sixteen row cluster table.
+
+
+::::
+
+:::
+
+## Table left, figure right 70/30
+
+::: {.columns}
+
+:::: {.column width="70%"}
+
+| Technology cluster | Mentions | Peak year | Peak share | *p* |
+| --- | ---: | ---: | ---: | ---: |
+| Algorithms & Recommendations | 103 | 2026 | 7.2% | .604 |
+| AR, VR & Robots | 54 | 2026 | 6.0% | < .001 |
+| Auctions & Pricing | 26 | 2007 | 5.4% | .004 |
+| Computers & Software | 134 | 2000 | 21.5% | < .001 |
+| Crypto & Fintech | 95 | 2026 | 10.5% | .034 |
+| E-Commerce | 81 | 2000 | 11.6% | .001 |
+| Gaming & Digital Platforms | 106 | 2026 | 9.4% | .002 |
+| Generative AI | 225 | 2026 | 30.2% | < .001 |
+| Internet & Broadcasting | 127 | 2000 | 29.4% | < .001 |
+| Mobility & Transportation | 27 | 2000 | 1.8% | .942 |
+| Search & Advertising | 99 | 2000 | 12.2% | .012 |
+| Smartphones & Apps | 126 | 2017 | 11.9% | .041 |
+| Social Media | 182 | 2016 | 24.1% | < .001 |
+| Streaming, Audio & Video | 57 | 2026 | 4.6% | .153 |
+| Tracking & Wearables | 56 | 2014 | 4.5% | .388 |
+| Other | 85 | 2014 | 7.3% | .440 |
+
+: Sixteen row cluster table.
+
+
+::::
+
+:::: {.column width="30%"}
+
+![A tall figure](images/tall.svg)
+
+
+::::
+
+:::
+
+## Table in a narrow 20% column
+
+::: {.columns}
+
+:::: {.column width="20%"}
+
+| Technology cluster | Mentions | Peak year | Peak share | *p* |
+| --- | ---: | ---: | ---: | ---: |
+| Algorithms & Recommendations | 103 | 2026 | 7.2% | .604 |
+| AR, VR & Robots | 54 | 2026 | 6.0% | < .001 |
+| Auctions & Pricing | 26 | 2007 | 5.4% | .004 |
+| Computers & Software | 134 | 2000 | 21.5% | < .001 |
+| Crypto & Fintech | 95 | 2026 | 10.5% | .034 |
+| E-Commerce | 81 | 2000 | 11.6% | .001 |
+| Gaming & Digital Platforms | 106 | 2026 | 9.4% | .002 |
+| Generative AI | 225 | 2026 | 30.2% | < .001 |
+| Internet & Broadcasting | 127 | 2000 | 29.4% | < .001 |
+| Mobility & Transportation | 27 | 2000 | 1.8% | .942 |
+| Search & Advertising | 99 | 2000 | 12.2% | .012 |
+| Smartphones & Apps | 126 | 2017 | 11.9% | .041 |
+| Social Media | 182 | 2016 | 24.1% | < .001 |
+| Streaming, Audio & Video | 57 | 2026 | 4.6% | .153 |
+| Tracking & Wearables | 56 | 2014 | 4.5% | .388 |
+| Other | 85 | 2014 | 7.3% | .440 |
+
+: Sixteen row cluster table.
+
+
+::::
+
+:::: {.column width="80%"}
+
+![A wide figure](images/wide.svg)
+
+Text beside the table. A few lines of body copy so the column has some
+realistic height to it.
+
+- Point one
+- Point two
+- Point three
+
+
+::::
+
+:::
+
+## Three columns, figure table text
+
+::: {.columns}
+
+:::: {.column width="30%"}
+
+![A tall figure](images/tall.svg)
+
+
+::::
+
+:::: {.column width="40%"}
+
+| Metric | Value |
+|:-------|------:|
+| Unique technologies | 901 |
+| Silhouette | 0.44 |
+| Davies--Bouldin | 0.92 |
+| Calinski--Harabasz | 459.45 |
+| Trustworthiness (10D) | 0.92 |
+| Inertia | 421.49 |
+
+: Six row metrics table.
+
+
+::::
+
+:::: {.column width="30%"}
+
+Text beside the table. A few lines of body copy so the column has some
+realistic height to it.
+
+- Point one
+- Point two
+- Point three
+
+
+::::
+
+:::
+
+## Two tables side by side
+
+::: {.columns}
+
+:::: {.column width="50%"}
+
+| Technology cluster | Mentions | Peak year | Peak share | *p* |
+| --- | ---: | ---: | ---: | ---: |
+| Algorithms & Recommendations | 103 | 2026 | 7.2% | .604 |
+| AR, VR & Robots | 54 | 2026 | 6.0% | < .001 |
+| Auctions & Pricing | 26 | 2007 | 5.4% | .004 |
+| Computers & Software | 134 | 2000 | 21.5% | < .001 |
+| Crypto & Fintech | 95 | 2026 | 10.5% | .034 |
+| E-Commerce | 81 | 2000 | 11.6% | .001 |
+| Gaming & Digital Platforms | 106 | 2026 | 9.4% | .002 |
+| Generative AI | 225 | 2026 | 30.2% | < .001 |
+| Internet & Broadcasting | 127 | 2000 | 29.4% | < .001 |
+| Mobility & Transportation | 27 | 2000 | 1.8% | .942 |
+| Search & Advertising | 99 | 2000 | 12.2% | .012 |
+| Smartphones & Apps | 126 | 2017 | 11.9% | .041 |
+| Social Media | 182 | 2016 | 24.1% | < .001 |
+| Streaming, Audio & Video | 57 | 2026 | 4.6% | .153 |
+| Tracking & Wearables | 56 | 2014 | 4.5% | .388 |
+| Other | 85 | 2014 | 7.3% | .440 |
+
+: Sixteen row cluster table.
+
+
+::::
+
+:::: {.column width="50%"}
+
+| Metric | Value |
+|:-------|------:|
+| Unique technologies | 901 |
+| Silhouette | 0.44 |
+| Davies--Bouldin | 0.92 |
+| Calinski--Harabasz | 459.45 |
+| Trustworthiness (10D) | 0.92 |
+| Inertia | 421.49 |
+
+: Six row metrics table.
+
+
+::::
+
+:::
+
+## Table and figure in the same column
+
+::: {.columns}
+
+:::: {.column width="50%"}
+
+| Metric | Value |
+|:-------|------:|
+| Unique technologies | 901 |
+| Silhouette | 0.44 |
+| Davies--Bouldin | 0.92 |
+| Calinski--Harabasz | 459.45 |
+| Trustworthiness (10D) | 0.92 |
+| Inertia | 421.49 |
+
+: Six row metrics table.
+
+![A square figure](images/square.svg)
+
+
+::::
+
+:::: {.column width="50%"}
+
+Text beside the table. A few lines of body copy so the column has some
+realistic height to it.
+
+- Point one
+- Point two
+- Point three
+
+
+::::
+
+:::
+
+## Figure above a table, full width
+
+![A wide figure](images/wide.svg)
+
+| Technology cluster | Mentions | Peak year | Peak share | *p* |
+| --- | ---: | ---: | ---: | ---: |
+| Algorithms & Recommendations | 103 | 2026 | 7.2% | .604 |
+| AR, VR & Robots | 54 | 2026 | 6.0% | < .001 |
+| Auctions & Pricing | 26 | 2007 | 5.4% | .004 |
+| Computers & Software | 134 | 2000 | 21.5% | < .001 |
+| Crypto & Fintech | 95 | 2026 | 10.5% | .034 |
+| E-Commerce | 81 | 2000 | 11.6% | .001 |
+| Gaming & Digital Platforms | 106 | 2026 | 9.4% | .002 |
+| Generative AI | 225 | 2026 | 30.2% | < .001 |
+| Internet & Broadcasting | 127 | 2000 | 29.4% | < .001 |
+| Mobility & Transportation | 27 | 2000 | 1.8% | .942 |
+| Search & Advertising | 99 | 2000 | 12.2% | .012 |
+| Smartphones & Apps | 126 | 2017 | 11.9% | .041 |
+| Social Media | 182 | 2016 | 24.1% | < .001 |
+| Streaming, Audio & Video | 57 | 2026 | 4.6% | .153 |
+| Tracking & Wearables | 56 | 2014 | 4.5% | .388 |
+| Other | 85 | 2014 | 7.3% | .440 |
+
+: Sixteen row cluster table.
+
+## Text, table, figure stacked
+
+Text beside the table. A few lines of body copy so the column has some
+realistic height to it.
+
+- Point one
+- Point two
+- Point three
+
+| Metric | Value |
+|:-------|------:|
+| Unique technologies | 901 |
+| Silhouette | 0.44 |
+| Davies--Bouldin | 0.92 |
+| Calinski--Harabasz | 459.45 |
+| Trustworthiness (10D) | 0.92 |
+| Inertia | 421.49 |
+
+: Six row metrics table.
+
+![A square figure](images/square.svg)

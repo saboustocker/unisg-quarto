@@ -1,47 +1,136 @@
 <script>
 (function () {
   var MIN = 0.15;
+  var MAX = 6;
+  var STEPS = 14;
+  var SLACK = 0.5;
 
-  function images(sec) {
-    return Array.prototype.slice.call(sec.querySelectorAll("img")).filter(function (i) {
-      return !i.classList.contains("slide-logo") && i.offsetHeight > 0;
+  function flexible(sec) {
+    var out = [];
+    sec.querySelectorAll("img").forEach(function (e) {
+      if (!e.classList.contains("slide-logo")) out.push(e);
+    });
+    sec.querySelectorAll("table").forEach(function (e) { out.push(e); });
+    return out.filter(function (e) {
+      var r = e.getBoundingClientRect();
+      return r.width > 0 && r.height > 0;
     });
   }
 
-  function overflow(sec) {
+  function scopeOf(el, sec) {
+    var e = el.parentElement;
+    while (e && e !== sec) {
+      if (e.classList.contains("column")) return e;
+      if (e.parentElement && e.parentElement.classList.contains("r-stack")) return e;
+      e = e.parentElement;
+    }
+    return sec;
+  }
+
+  function reset(el) {
+    if (el.tagName === "IMG") el.style.maxHeight = "";
+    else el.style.zoom = "";
+  }
+
+  function apply(el, natural, f, scale) {
+    if (el.tagName === "IMG") {
+      el.style.width = "auto";
+      el.style.height = "auto";
+      el.style.maxHeight = (natural * f) / scale + "px";
+    } else {
+      el.style.zoom = f;
+    }
+  }
+
+  function box(sec) {
     var rect = sec.getBoundingClientRect();
-    var scale = sec.offsetHeight ? rect.height / sec.offsetHeight : 0;
-    if (!scale) return 0;
-    var pad = (parseFloat(getComputedStyle(sec).paddingBottom) || 0) * scale;
-    var limit = rect.bottom - pad;
-    var bottom = 0;
-    sec.querySelectorAll("*").forEach(function (e) {
-      var b = e.getBoundingClientRect().bottom;
-      if (b > bottom) bottom = b;
+    if (!sec.offsetHeight || rect.height <= 0) return null;
+    var scale = rect.height / sec.offsetHeight;
+    if (!(scale > 0)) return null;
+    var cs = getComputedStyle(sec);
+    var padB = (parseFloat(cs.paddingBottom) || 0) * scale;
+    var padR = (parseFloat(cs.paddingRight) || 0) * scale;
+    return {
+      bottom: rect.bottom - padB,
+      right: rect.right - padR,
+      scale: scale
+    };
+  }
+
+  function extent(scope, includeSelf) {
+    var bottom = -Infinity;
+    var right = -Infinity;
+    if (includeSelf) {
+      var own = scope.getBoundingClientRect();
+      bottom = own.bottom;
+      right = own.right;
+    }
+    scope.querySelectorAll("*").forEach(function (e) {
+      var r = e.getBoundingClientRect();
+      if (!r.width && !r.height) return;
+      if (r.bottom > bottom) bottom = r.bottom;
+      if (r.right > right) right = r.right;
     });
-    return (bottom - limit) / scale;
+    return { bottom: bottom, right: right };
+  }
+
+  function fitScope(scope, els, slide) {
+    els.forEach(reset);
+
+    var natural = els.map(function (e) { return e.getBoundingClientRect().height; });
+    if (natural.some(function (h) { return !(h > 0); })) return;
+
+    var limitRight = slide.right;
+    if (scope.classList && scope.classList.contains("column")) {
+      limitRight = Math.min(limitRight, scope.getBoundingClientRect().right);
+    }
+
+    var boxed = !!(scope.classList && (scope.classList.contains("column") ||
+      (scope.parentElement && scope.parentElement.classList.contains("r-stack"))));
+
+    function fits(f) {
+      for (var i = 0; i < els.length; i++) apply(els[i], natural[i], f, slide.scale);
+      var e = extent(scope, boxed);
+      return e.bottom <= slide.bottom + SLACK && e.right <= limitRight + SLACK;
+    }
+
+    var ceiling = els.some(function (e) { return e.tagName === "TABLE"; }) ? 1 : MAX;
+
+    var lo = MIN;
+    var hi = ceiling;
+    if (fits(ceiling)) {
+      lo = ceiling;
+    } else if (!fits(MIN)) {
+      lo = MIN;
+    } else {
+      for (var n = 0; n < STEPS; n++) {
+        var mid = (lo + hi) / 2;
+        if (fits(mid)) lo = mid; else hi = mid;
+      }
+    }
+
+    for (var j = 0; j < els.length; j++) {
+      if (lo >= 0.999 && lo <= 1.001) reset(els[j]);
+      else apply(els[j], natural[j], lo, slide.scale);
+    }
   }
 
   function fitSlide(sec) {
     if (!sec || !sec.clientHeight) return;
-    var imgs = images(sec);
-    imgs.forEach(function (i) { i.style.maxHeight = ""; });
-    imgs = images(sec);
-    if (!imgs.length) return;
+    var slide = box(sec);
+    if (!slide) return;
 
-    for (var n = 0; n < 6; n++) {
-      var over = overflow(sec);
-      if (over <= 1) break;
-      var total = imgs.reduce(function (a, i) { return a + i.offsetHeight; }, 0);
-      if (total <= 0) break;
-      var k = Math.max(MIN, (total - over) / total);
-      if (k >= 1) break;
-      imgs.forEach(function (i) {
-        i.style.width = "auto";
-        i.style.height = "auto";
-        i.style.maxHeight = i.offsetHeight * k + "px";
-      });
-    }
+    var els = flexible(sec);
+    if (!els.length) return;
+
+    var groups = new Map();
+    els.forEach(function (el) {
+      var s = scopeOf(el, sec);
+      if (!groups.has(s)) groups.set(s, []);
+      groups.get(s).push(el);
+    });
+    groups.forEach(function (list, scope) { fitScope(scope, list, slide); });
+    groups.forEach(function (list, scope) { fitScope(scope, list, slide); });
   }
 
   function current() {
@@ -53,11 +142,9 @@
   }
 
   function schedule() {
-    requestAnimationFrame(function () {
-      requestAnimationFrame(run);
-    });
-    setTimeout(run, 150);
-    setTimeout(run, 500);
+    requestAnimationFrame(function () { requestAnimationFrame(run); });
+    setTimeout(run, 200);
+    setTimeout(run, 600);
   }
 
   function watchImages() {

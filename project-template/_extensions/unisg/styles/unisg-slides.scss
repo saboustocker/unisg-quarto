@@ -61,6 +61,16 @@ $logo-white: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTG9nbyIgeG1sbnM9Imh0dHA6
   max-width: 100%;
 }
 
+.reveal .slides .r-stack > * {
+  width: 100%;
+}
+
+.reveal .slides section table {
+  max-width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 /* Reveal tags beige slides .has-light-background and repaints text #222 */
 .reveal .slides section.has-light-background {
   color: $hsg-ink;
