@@ -4,6 +4,7 @@
 $hsg-gruen: #00802f;
 $hsg-dunkelgruen: #0a5f2d;
 $hsg-beige: #e1d7c3;
+$hsg-beige-bg: #f2ecdf;
 $hsg-blau: #73a5af;
 $hsg-korall: #eb6969;
 $hsg-gelb: #fff04b;
@@ -19,7 +20,7 @@ $on-blau: #ffffff;                 // 2.5:1, requested
 $on-korall: #ffffff;               // 3.1:1, requested
 $on-gelb: $hsg-ink;                // 12.1:1
 
-$body-bg: $hsg-beige;
+$body-bg: $hsg-beige-bg;
 $body-color: $hsg-ink;
 $link-color: $hsg-dunkelgruen;
 $selection-bg: rgba($hsg-gruen, 0.25);
@@ -31,7 +32,7 @@ $font-family-sans-serif: Arial, "Helvetica Neue", Helvetica, sans-serif;
 $logo-band: 54px;
 
 // Surfaces that take the white logo and light footer furniture
-$dark-surfaces: ".slides section.present.quarto-title-block, .slides section.present.section-header-bg, .slides section.present.quote-slide-bg, .slides section.present.green-slide-bg, .slides section.present.darkgreen-slide-bg, .slides section.present.blue-slide-bg, .slides section.present.red-slide-bg";
+$dark-surfaces: ".slides section.present.quarto-title-block, .slides section.present.section-header-bg, .slides section.present.quote-slide-bg, .slides section.present.green-slide-bg, .slides section.present.darkgreen-slide-bg, .slides section.present.blue-slide-bg, .slides section.present.red-slide-bg, .slides section.present.green-slide-no-underline-bg, .slides section.present.darkgreen-slide-no-underline-bg, .slides section.present.blue-slide-no-underline-bg, .slides section.present.red-slide-no-underline-bg";
 
 $icon-bars: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>');
 $icon-easel: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0a.5.5 0 0 1 .447.276L8.81 1h4.69A1.5 1.5 0 0 1 15 2.5V11h.5a.5.5 0 0 1 0 1h-2.86l.845 3.379a.5.5 0 0 1-.97.242L12.11 14H3.89l-.405 1.621a.5.5 0 0 1-.97-.242L3.36 12H.5a.5.5 0 0 1 0-1H1V2.5A1.5 1.5 0 0 1 2.5 1h4.691l.362-.724A.5.5 0 0 1 8 0ZM2 11h12V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5V11Zm9.61 1H4.39l-.25 1h7.72l-.25-1Z"/></svg>');
@@ -296,10 +297,23 @@ section.section-header-bg.subtitle-section-header h1 {
   border-left-color: darken($hsg-gelb, 18%);
 }
 
-.reveal .citation,
+.reveal .citation {
+  color: $on-beige-muted;
+  font-size: 0.6em;
+}
+
 .reveal .citation a {
   color: $on-beige-muted;
-  font-size: 0.5em;
+  font-size: 1em;
+}
+
+section[class*="green-slide"] .citation,
+section[class*="green-slide"] .citation a,
+section[class*="blue-slide"] .citation,
+section[class*="blue-slide"] .citation a,
+section[class*="red-slide"] .citation,
+section[class*="red-slide"] .citation a {
+  color: $hsg-beige !important;
 }
 
 .subtitle-p {
@@ -338,13 +352,14 @@ section.section-header-bg.subtitle-section-header h1 {
 
 body,
 .reveal {
-  background-color: $hsg-beige;
+  background-color: $hsg-beige-bg;
 }
 
 .reveal .backgrounds { background: none; }
 
 /* Image slide */
-.reveal .backgrounds .slide-background.level2.image-slide-bg {
+.reveal .backgrounds .slide-background.level2.image-slide-bg,
+.reveal .backgrounds .slide-background.level2.image-slide-no-underline-bg {
   background: linear-gradient(180deg,
     white 0,
     white calc(100% - #{$logo-band}),
@@ -355,75 +370,118 @@ body,
 /* Color slides.
    White fails 4.5:1 on blue (2.5), coral (3.1) and yellow (1.2),
    so those three carry ink text; green and dark green keep white. */
-.reveal .backgrounds .slide-background.level2.red-slide-bg { background: $hsg-korall; }
+.reveal .backgrounds .slide-background.level2.red-slide-bg,
+.reveal .backgrounds .slide-background.level2.red-slide-no-underline-bg { background: $hsg-korall; }
 
 section.level2.red-slide-bg,
+section.level2.red-slide-no-underline-bg,
 section.level2.red-slide-bg h2,
+section.level2.red-slide-no-underline-bg h2,
 section.level2.red-slide-bg h3,
-section.level2.red-slide-bg .white-text-p {
+section.level2.red-slide-no-underline-bg h3,
+section.level2.red-slide-bg .white-text-p,
+section.level2.red-slide-no-underline-bg .white-text-p {
   color: $on-korall !important;
 }
 
-section.level2.red-slide-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.45); }
+section.level2.red-slide-bg h2,
+section.level2.red-slide-no-underline-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.45); }
 
-.reveal .backgrounds .slide-background.level2.blue-slide-bg { background: $hsg-blau; }
+.reveal .backgrounds .slide-background.level2.blue-slide-bg,
+.reveal .backgrounds .slide-background.level2.blue-slide-no-underline-bg { background: $hsg-blau; }
 
 section.level2.blue-slide-bg,
+section.level2.blue-slide-no-underline-bg,
 section.level2.blue-slide-bg h2,
+section.level2.blue-slide-no-underline-bg h2,
 section.level2.blue-slide-bg h3,
-section.level2.blue-slide-bg .white-text-p {
+section.level2.blue-slide-no-underline-bg h3,
+section.level2.blue-slide-bg .white-text-p,
+section.level2.blue-slide-no-underline-bg .white-text-p {
   color: $on-blau !important;
 }
 
-section.level2.blue-slide-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.45); }
+section.level2.blue-slide-bg h2,
+section.level2.blue-slide-no-underline-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.45); }
 
 section.level2.blue-slide-bg figcaption,
-section.level2.blue-slide-bg .quarto-figure-caption {
+section.level2.blue-slide-no-underline-bg figcaption,
+section.level2.blue-slide-bg .quarto-figure-caption,
+section.level2.blue-slide-no-underline-bg .quarto-figure-caption {
   color: $on-blau !important;
   font-size: 0.55em;
   text-align: center;
 }
 
 .reveal .backgrounds .slide-background.level1.green-slide-bg,
-.reveal .backgrounds .slide-background.level2.green-slide-bg {
+.reveal .backgrounds .slide-background.level1.green-slide-no-underline-bg,
+.reveal .backgrounds .slide-background.level2.green-slide-bg,
+.reveal .backgrounds .slide-background.level2.green-slide-no-underline-bg {
   background: $hsg-gruen;
 }
 
 section.level2.green-slide-bg,
+section.level2.green-slide-no-underline-bg,
 section.level1.green-slide-bg,
+section.level1.green-slide-no-underline-bg,
 section.level2.green-slide-bg h2,
-section.level1.green-slide-bg h1 {
+section.level2.green-slide-no-underline-bg h2,
+section.level1.green-slide-bg h1,
+section.level1.green-slide-no-underline-bg h1 {
   color: $on-green !important;
 }
 
-section.level2.green-slide-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.35); }
+section.level2.green-slide-bg h2,
+section.level2.green-slide-no-underline-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.35); }
 
 .reveal .backgrounds .slide-background.level1.darkgreen-slide-bg,
-.reveal .backgrounds .slide-background.level2.darkgreen-slide-bg {
+.reveal .backgrounds .slide-background.level1.darkgreen-slide-no-underline-bg,
+.reveal .backgrounds .slide-background.level2.darkgreen-slide-bg,
+.reveal .backgrounds .slide-background.level2.darkgreen-slide-no-underline-bg {
   background: $hsg-dunkelgruen;
 }
 
 section.level2.darkgreen-slide-bg,
+section.level2.darkgreen-slide-no-underline-bg,
 section.level1.darkgreen-slide-bg,
+section.level1.darkgreen-slide-no-underline-bg,
 section.level2.darkgreen-slide-bg h2,
+section.level2.darkgreen-slide-no-underline-bg h2,
 section.level1.darkgreen-slide-bg h1,
+section.level1.darkgreen-slide-no-underline-bg h1,
 section.level2.darkgreen-slide-bg h3,
-section.level2.darkgreen-slide-bg .white-text-p {
+section.level2.darkgreen-slide-no-underline-bg h3,
+section.level2.darkgreen-slide-bg .white-text-p,
+section.level2.darkgreen-slide-no-underline-bg .white-text-p {
   color: $on-dunkelgruen !important;
 }
 
-section.level2.darkgreen-slide-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.35); }
+section.level2.darkgreen-slide-bg h2,
+section.level2.darkgreen-slide-no-underline-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.35); }
 
-.reveal .backgrounds .slide-background.level2.yellow-slide-bg { background: $hsg-gelb; }
+.reveal .backgrounds .slide-background.level2.yellow-slide-bg,
+.reveal .backgrounds .slide-background.level2.yellow-slide-no-underline-bg { background: $hsg-gelb; }
 
 section.level2.yellow-slide-bg,
+section.level2.yellow-slide-no-underline-bg,
 section.level2.yellow-slide-bg h2,
+section.level2.yellow-slide-no-underline-bg h2,
 section.level2.yellow-slide-bg h3,
-section.level2.yellow-slide-bg .white-text-p {
+section.level2.yellow-slide-no-underline-bg h3,
+section.level2.yellow-slide-bg .white-text-p,
+section.level2.yellow-slide-no-underline-bg .white-text-p {
   color: $on-gelb !important;
 }
 
-section.level2.yellow-slide-bg h2 { border-bottom-color: rgba($hsg-ink, 0.3); }
+section.level2.yellow-slide-bg h2,
+section.level2.yellow-slide-no-underline-bg h2 { border-bottom-color: rgba($hsg-ink, 0.3); }
+
+section[class*="-no-underline-bg"] h1,
+section[class*="-no-underline-bg"] h2,
+section[class*="-no-underline-bg"] h3 {
+  border-bottom: none;
+  padding-bottom: 0;
+}
 
 .reveal .slides h2:empty,
 .reveal .slides section.level2 h2:empty,
