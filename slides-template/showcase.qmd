@@ -91,6 +91,46 @@ The yellow surface had no text rules at all, so white text was invisible at
 1.2:1. Ink on yellow is 12.1:1, and the logo stays the colour version.
 :::
 
+## Green slide no underline {.green-slide-no-underline-bg}
+
+::: {.white-text-p}
+No rule under the heading. Compare with `.green-slide-bg` above.
+:::
+
+### Subheading
+
+## Dark green slide no underline {.darkgreen-slide-no-underline-bg}
+
+::: {.white-text-p}
+No rule under the heading. Compare with `.darkgreen-slide-bg` above.
+:::
+
+## Blue slide no underline {.blue-slide-no-underline-bg}
+
+::: {.white-text-p}
+No rule under the heading. Compare with `.blue-slide-bg` above.
+:::
+
+## Red slide no underline {.red-slide-no-underline-bg}
+
+::: {.white-text-p}
+No rule under the heading. Compare with `.red-slide-bg` above.
+:::
+
+## Yellow slide no underline {.yellow-slide-no-underline-bg}
+
+::: {.white-text-p}
+No rule under the heading. Compare with `.yellow-slide-bg` above.
+:::
+
+## Image slide no underline {.image-slide-no-underline-bg}
+
+::: {.callout-slide-p}
+No rule under the heading. Compare with `.image-slide-bg` above.
+:::
+
+# Green section no underline {.green-slide-no-underline-bg}
+
 # Content elements {.section-header-bg .subtitle-section-header}
 
 ## Blockquote and citation

@@ -432,8 +432,7 @@ section.level2.red-slide-no-underline-bg .white-text-p {
   color: $on-korall !important;
 }
 
-section.level2.red-slide-bg h2,
-section.level2.red-slide-no-underline-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.45); }
+section.level2.red-slide-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.45); }
 
 .reveal .backgrounds .slide-background.level2.blue-slide-bg,
 .reveal .backgrounds .slide-background.level2.blue-slide-no-underline-bg { background: $hsg-blau; }
@@ -449,8 +448,7 @@ section.level2.blue-slide-no-underline-bg .white-text-p {
   color: $on-blau !important;
 }
 
-section.level2.blue-slide-bg h2,
-section.level2.blue-slide-no-underline-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.45); }
+section.level2.blue-slide-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.45); }
 
 section.level2.blue-slide-bg figcaption,
 section.level2.blue-slide-no-underline-bg figcaption,
@@ -479,8 +477,7 @@ section.level1.green-slide-no-underline-bg h1 {
   color: $on-green !important;
 }
 
-section.level2.green-slide-bg h2,
-section.level2.green-slide-no-underline-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.35); }
+section.level2.green-slide-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.35); }
 
 .reveal .backgrounds .slide-background.level1.darkgreen-slide-bg,
 .reveal .backgrounds .slide-background.level1.darkgreen-slide-no-underline-bg,
@@ -504,8 +501,7 @@ section.level2.darkgreen-slide-no-underline-bg .white-text-p {
   color: $on-dunkelgruen !important;
 }
 
-section.level2.darkgreen-slide-bg h2,
-section.level2.darkgreen-slide-no-underline-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.35); }
+section.level2.darkgreen-slide-bg h2 { border-bottom-color: rgba(255, 255, 255, 0.35); }
 
 .reveal .backgrounds .slide-background.level2.yellow-slide-bg,
 .reveal .backgrounds .slide-background.level2.yellow-slide-no-underline-bg { background: $hsg-gelb; }
@@ -521,12 +517,11 @@ section.level2.yellow-slide-no-underline-bg .white-text-p {
   color: $on-gelb !important;
 }
 
-section.level2.yellow-slide-bg h2,
-section.level2.yellow-slide-no-underline-bg h2 { border-bottom-color: rgba($hsg-ink, 0.3); }
+section.level2.yellow-slide-bg h2 { border-bottom-color: rgba($hsg-ink, 0.3); }
 
-section[class*="-no-underline-bg"] h1,
-section[class*="-no-underline-bg"] h2,
-section[class*="-no-underline-bg"] h3 {
+.reveal .slides section[class*="-no-underline-bg"] h1,
+.reveal .slides section[class*="-no-underline-bg"] h2,
+.reveal .slides section[class*="-no-underline-bg"] h3 {
   border-bottom: none;
   padding-bottom: 0;
 }

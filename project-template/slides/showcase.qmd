@@ -103,6 +103,17 @@ This is a test that the citations work now [@]
 
 ## Image {.image-slide-no-underline-bg}
 
+## Dark green slide no underline {.darkgreen-slide-no-underline-bg}
+
+::: {.white-text-p}
+Level 2 heading with no rule under it. Compare with the dark green slide
+above, which keeps its rule.
+:::
+
+### Subheading
+
+# Green section no underline {.green-slide-no-underline-bg}
+
 # Content elements {.section-header-bg .subtitle-section-header}
 
 ## Blockquote and citation
