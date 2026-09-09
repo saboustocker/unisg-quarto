@@ -91,6 +91,18 @@ The yellow surface had no text rules at all, so white text was invisible at
 1.2:1. Ink on yellow is 12.1:1, and the logo stays the colour version.
 :::
 
+## Greed Slide no underline {.green-slide-no-underline-bg}
+
+This is a test that the citations work now [@]
+
+## Yellow Slide no underline {.yellow-slide-no-underline-bg}
+
+## blue-slide-no-underline-bg {.blue-slide-no-underline-bg}
+
+## Red {.red-slide-no-underline-bg} 
+
+## Image {.image-slide-no-underline-bg}
+
 # Content elements {.section-header-bg .subtitle-section-header}
 
 ## Blockquote and citation
