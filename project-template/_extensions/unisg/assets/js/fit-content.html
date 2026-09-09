@@ -1,0 +1,57 @@
+<script>
+(function () {
+  var MIN = 0.3;
+
+  function tableHeight(tables) {
+    var h = 0;
+    tables.forEach(function (t) { h += t.getBoundingClientRect().height; });
+    return h;
+  }
+
+  function fitSlide(sec) {
+    var tables = sec.querySelectorAll("table");
+    if (!tables.length) return;
+    var zoom = 1;
+    tables.forEach(function (t) { t.style.zoom = ""; });
+
+    for (var i = 0; i < 6; i++) {
+      var over = sec.scrollHeight - sec.clientHeight;
+      var wide = 0;
+      tables.forEach(function (t) {
+        wide = Math.max(wide, t.getBoundingClientRect().width - sec.clientWidth);
+      });
+      if (over <= 1 && wide <= 1) break;
+      var th = tableHeight(tables);
+      var kh = th > 0 ? (th - over) / th : 1;
+      var kw = 1;
+      tables.forEach(function (t) {
+        var w = t.getBoundingClientRect().width;
+        if (w > sec.clientWidth) kw = Math.min(kw, sec.clientWidth / w);
+      });
+      var step = Math.min(kh, kw);
+      if (!(step > 0) || step >= 1) break;
+      zoom = Math.max(MIN, zoom * step);
+      tables.forEach(function (t) { t.style.zoom = zoom; });
+      if (zoom <= MIN) break;
+    }
+  }
+
+  function fitAll() {
+    document.querySelectorAll(".reveal .slides section").forEach(fitSlide);
+  }
+
+  function schedule() {
+    requestAnimationFrame(function () { requestAnimationFrame(fitAll); });
+  }
+
+  window.addEventListener("load", schedule);
+  window.addEventListener("resize", schedule);
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.Reveal) {
+      Reveal.on("ready", schedule);
+      Reveal.on("slidechanged", schedule);
+      Reveal.on("resize", schedule);
+    }
+  });
+})();
+</script>

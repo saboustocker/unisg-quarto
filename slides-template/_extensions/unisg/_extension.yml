@@ -28,6 +28,10 @@ contributes:
       transition: fade
       width: 1600
       height: 900
+      margin: 0
+      center: false
+      auto-stretch: false
+      include-after-body: assets/js/fit-content.html
       chalkboard: true
       preview-links: auto
     pdf:

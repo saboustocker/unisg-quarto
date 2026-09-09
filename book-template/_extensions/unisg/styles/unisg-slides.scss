@@ -49,8 +49,26 @@ $logo-white: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTG9nbyIgeG1sbnM9Imh0dHA6
 }
 
 .reveal {
-  font-size: 34px;
+  font-size: 27px;
 }
+
+.reveal .slides section:not(.stack) {
+  box-sizing: border-box;
+  padding: 5.6% 10%;
+}
+
+.reveal .slides > section.present,
+.reveal .slides > section > section.present {
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
+}
+
+.reveal .slides > section.present.center,
+.reveal .slides > section > section.present.center {
+  justify-content: center;
+}
+
 
 .reveal h2 {
   color: $hsg-gruen;
@@ -165,7 +183,7 @@ $logo-white: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTG9nbyIgeG1sbnM9Imh0dHA6
   flex-direction: column;
   justify-content: center;
   min-height: 100%;
-  padding: 0 5% 0 0;
+  padding: 0 10% 0 0;
   width: 100% !important;
   text-align: end;
 }
@@ -350,12 +368,103 @@ section[class*="red-slide"] .citation a {
 .ink-p { color: $hsg-ink; font-size: 1em; }
 .smaller-p { font-size: 0.8em; }
 
+html,
 body,
+.reveal-viewport {
+  background: #000000;
+}
+
 .reveal {
-  background-color: $hsg-beige-bg;
+  background: transparent;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
 }
 
 .reveal .backgrounds { background: none; }
+
+.reveal .slide-logo,
+.reveal .footer,
+.reveal .slide-number,
+.reveal .slide-menu-button,
+.reveal .slide-chalkboard-buttons {
+  position: absolute !important;
+}
+
+.reveal .backgrounds .slide-background {
+  background: $hsg-beige-bg;
+}
+
+.reveal .slides section > figure,
+.reveal .slides section > .quarto-figure,
+.reveal .slides section > .cell,
+.reveal .slides section > .cell-output-display,
+.reveal .slides section > .fit-block {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reveal .slides section figure,
+.reveal .slides section .quarto-figure {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0;
+}
+
+.reveal .slides section figure > p,
+.reveal .slides section .cell-output-display > p {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+
+.reveal .slides section > p:has(> img) {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+
+.reveal .slides section img {
+  min-height: 0;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.reveal .slides section figcaption,
+.reveal .slides section .quarto-figure-caption {
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+
+.reveal .slides section table {
+  margin: auto;
+}
+
 
 /* Image slide */
 .reveal .backgrounds .slide-background.level2.image-slide-bg,
