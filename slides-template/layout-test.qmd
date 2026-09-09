@@ -1,0 +1,85 @@
+---
+title: "Layout Test"
+subtitle: "Columns, images and captions"
+author: "Author Name"
+date: last-modified
+format:
+  unisg-revealjs: default
+---
+
+## Two columns, text only
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Left column. Some text that runs over a couple of lines so the column has a
+realistic amount of content in it.
+
+- First point
+- Second point
+- Third point
+:::
+
+::: {.column width="50%"}
+Right column. More text on this side, again over several lines to give the
+column body some height.
+
+- Fourth point
+- Fifth point
+:::
+
+::::
+
+## Two columns, image right
+
+:::: {.columns}
+
+::: {.column width="45%"}
+Text on the left. The image on the right should scale down to the space it has
+and stay centred, without pushing this text out of the slide.
+
+- Point one
+- Point two
+:::
+
+::: {.column width="55%"}
+![Square image in a column](images/square.svg)
+:::
+
+::::
+
+## Two columns, tall image left
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![Tall image in a column](images/tall.svg)
+:::
+
+::: {.column width="60%"}
+Text on the right. The tall image should be limited by the height of the slide,
+not by the width of its column.
+
+- Point one
+- Point two
+- Point three
+:::
+
+::::
+
+## One column, tall image with caption
+
+![A tall image with a caption that must stay fully visible. Text on the right. The tall image should be limited by the height of the slide,
+not by the width of its column.- Point on- Point two- Point three](images/tall.svg)
+
+## One column, wide image with caption
+
+![A wide image with a caption that must stay fully visible](images/wide.svg)
+
+## Text above a wide image
+
+Some introductory text above the figure.
+
+![A wide image below text, with a caption](images/wide.svg)
+
+# Q&A

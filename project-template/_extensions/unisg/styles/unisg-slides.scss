@@ -32,7 +32,7 @@ $font-family-sans-serif: Arial, "Helvetica Neue", Helvetica, sans-serif;
 $logo-band: 54px;
 
 // Surfaces that take the white logo and light footer furniture
-$dark-surfaces: ".slides section.present.quarto-title-block, .slides section.present.section-header-bg, .slides section.present.quote-slide-bg, .slides section.present.green-slide-bg, .slides section.present.darkgreen-slide-bg, .slides section.present.blue-slide-bg, .slides section.present.red-slide-bg, .slides section.present.green-slide-no-underline-bg, .slides section.present.darkgreen-slide-no-underline-bg, .slides section.present.blue-slide-no-underline-bg, .slides section.present.red-slide-no-underline-bg";
+$dark-surfaces: ".slides section.present.quarto-title-block, .slides section.present.title-slide, .slides section.present.section-header-bg, .slides section.present.quote-slide-bg, .slides section.present.green-slide-bg, .slides section.present.darkgreen-slide-bg, .slides section.present.blue-slide-bg, .slides section.present.red-slide-bg, .slides section.present.green-slide-no-underline-bg, .slides section.present.darkgreen-slide-no-underline-bg, .slides section.present.blue-slide-no-underline-bg, .slides section.present.red-slide-no-underline-bg";
 
 $icon-bars: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>');
 $icon-easel: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0a.5.5 0 0 1 .447.276L8.81 1h4.69A1.5 1.5 0 0 1 15 2.5V11h.5a.5.5 0 0 1 0 1h-2.86l.845 3.379a.5.5 0 0 1-.97.242L12.11 14H3.89l-.405 1.621a.5.5 0 0 1-.97-.242L3.36 12H.5a.5.5 0 0 1 0-1H1V2.5A1.5 1.5 0 0 1 2.5 1h4.691l.362-.724A.5.5 0 0 1 8 0ZM2 11h12V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5V11Zm9.61 1H4.39l-.25 1h7.72l-.25-1Z"/></svg>');
@@ -57,16 +57,25 @@ $logo-white: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTG9nbyIgeG1sbnM9Imh0dHA6
   padding: 5.6% 10%;
 }
 
-.reveal .slides > section.present,
-.reveal .slides > section > section.present {
-  display: flex !important;
-  flex-direction: column;
-  height: 100%;
+.reveal .slides section img {
+  max-width: 100%;
 }
 
-.reveal .slides > section.present.center,
-.reveal .slides > section > section.present.center {
-  justify-content: center;
+/* Reveal tags beige slides .has-light-background and repaints text #222 */
+.reveal .slides section.has-light-background,
+.reveal .slides section.has-light-background p,
+.reveal .slides section.has-light-background li {
+  color: $hsg-ink;
+}
+
+.reveal .slides section.has-light-background h2 {
+  color: $hsg-gruen;
+}
+
+.reveal .slides section.has-light-background h1,
+.reveal .slides section.has-light-background h3,
+.reveal .slides section.has-light-background h4 {
+  color: $hsg-dunkelgruen;
 }
 
 
@@ -395,74 +404,6 @@ body,
 
 .reveal .backgrounds .slide-background {
   background: $hsg-beige-bg;
-}
-
-.reveal .slides section > figure,
-.reveal .slides section > .quarto-figure,
-.reveal .slides section > .cell,
-.reveal .slides section > .cell-output-display,
-.reveal .slides section > .fit-block {
-  flex: 1 1 auto;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.reveal .slides section figure,
-.reveal .slides section .quarto-figure {
-  flex: 1 1 auto;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  margin: 0;
-}
-
-.reveal .slides section figure > p,
-.reveal .slides section .cell-output-display > p {
-  flex: 1 1 auto;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0;
-}
-
-.reveal .slides section > p:has(> img) {
-  flex: 1 1 auto;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0;
-}
-
-.reveal .slides section img {
-  min-height: 0;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.reveal .slides section figcaption,
-.reveal .slides section .quarto-figure-caption {
-  flex: 0 0 auto;
-  max-width: 100%;
-}
-
-.reveal .slides section table {
-  margin: auto;
 }
 
 

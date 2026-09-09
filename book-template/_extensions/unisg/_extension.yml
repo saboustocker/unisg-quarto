@@ -31,7 +31,7 @@ contributes:
       margin: 0
       center: false
       auto-stretch: false
-      include-after-body: assets/js/fit-content.html
+      include-after-body: assets/js/fit-images.html
       chalkboard: true
       preview-links: auto
     pdf:

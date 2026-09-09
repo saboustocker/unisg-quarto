@@ -1,0 +1,81 @@
+<script>
+(function () {
+  var MIN = 0.15;
+
+  function images(sec) {
+    return Array.prototype.slice.call(sec.querySelectorAll("img")).filter(function (i) {
+      return !i.classList.contains("slide-logo") && i.offsetHeight > 0;
+    });
+  }
+
+  function overflow(sec) {
+    var rect = sec.getBoundingClientRect();
+    var scale = sec.offsetHeight ? rect.height / sec.offsetHeight : 0;
+    if (!scale) return 0;
+    var pad = (parseFloat(getComputedStyle(sec).paddingBottom) || 0) * scale;
+    var limit = rect.bottom - pad;
+    var bottom = 0;
+    sec.querySelectorAll("*").forEach(function (e) {
+      var b = e.getBoundingClientRect().bottom;
+      if (b > bottom) bottom = b;
+    });
+    return (bottom - limit) / scale;
+  }
+
+  function fitSlide(sec) {
+    if (!sec || !sec.clientHeight) return;
+    var imgs = images(sec);
+    imgs.forEach(function (i) { i.style.maxHeight = ""; });
+    imgs = images(sec);
+    if (!imgs.length) return;
+
+    for (var n = 0; n < 6; n++) {
+      var over = overflow(sec);
+      if (over <= 1) break;
+      var total = imgs.reduce(function (a, i) { return a + i.offsetHeight; }, 0);
+      if (total <= 0) break;
+      var k = Math.max(MIN, (total - over) / total);
+      if (k >= 1) break;
+      imgs.forEach(function (i) {
+        i.style.width = "auto";
+        i.style.height = "auto";
+        i.style.maxHeight = i.offsetHeight * k + "px";
+      });
+    }
+  }
+
+  function current() {
+    return document.querySelector(".reveal .slides section.present:not(.stack)");
+  }
+
+  function run() {
+    fitSlide(current());
+  }
+
+  function schedule() {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(run);
+    });
+    setTimeout(run, 150);
+    setTimeout(run, 500);
+  }
+
+  function watchImages() {
+    document.querySelectorAll(".reveal .slides img").forEach(function (i) {
+      if (i.dataset.fitWatched) return;
+      i.dataset.fitWatched = "1";
+      i.addEventListener("load", schedule);
+    });
+  }
+
+  window.addEventListener("load", function () { watchImages(); schedule(); });
+  window.addEventListener("resize", schedule);
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.Reveal) {
+      Reveal.on("ready", function () { watchImages(); schedule(); });
+      Reveal.on("slidechanged", function () { watchImages(); schedule(); });
+      Reveal.on("resize", schedule);
+    }
+  });
+})();
+</script>
