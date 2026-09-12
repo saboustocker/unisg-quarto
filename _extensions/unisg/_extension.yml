@@ -20,20 +20,6 @@ contributes:
       fig-responsive: true
       link-external-newwindow: true
       theme: [cosmo, styles/unisg-pages.scss]
-    revealjs:
-      logo: assets/logos/HSG_Logo_EN_RGB.svg
-      theme: [default, styles/unisg-slides.scss]
-      slide-number: true
-      progress: true
-      transition: fade
-      width: 1600
-      height: 900
-      margin: 0
-      center: false
-      auto-stretch: false
-      include-after-body: assets/js/fit-images.html
-      chalkboard: true
-      preview-links: auto
     pdf:
       documentclass: article
       papersize: a4

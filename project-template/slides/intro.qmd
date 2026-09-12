@@ -4,14 +4,14 @@ subtitle: "University of St.Gallen"
 author: "Author Name"
 date: last-modified
 format:
-  unisg-revealjs: default
+  unisg-slides-revealjs: default
 ---
 
 # Section {.section-header-bg .subtitle-section-header}
 
 ## Normal slide
 
-This slide uses the reusable `unisg-revealjs` format. Basic slides use the colored UniSG logo.
+This slide uses the reusable `unisg-slides-revealjs` format. Basic slides use the colored UniSG logo.
 
 ::: {.center-middle}
 A centered block.

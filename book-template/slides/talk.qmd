@@ -3,7 +3,7 @@ title: "Book Title"
 subtitle: "Companion slides"
 author: "Author Name"
 date: last-modified
-format: unisg-revealjs
+format: unisg-slides-revealjs
 ---
 
 # Introduction {.section-header-bg .subtitle-section-header}

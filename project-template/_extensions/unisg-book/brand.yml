@@ -1,0 +1,47 @@
+meta:
+  name: University of St.Gallen
+  link: https://www.unisg.ch
+
+color:
+  palette:
+    hsg-green: "#00802f"
+    hsg-dark-green: "#0a5f2d"
+    hsg-beige: "#e1d7c3"
+    hsg-blue: "#73a5af"
+    hsg-coral: "#eb6969"
+    hsg-yellow: "#fff04b"
+    white: "#ffffff"
+    black: "#000000"
+    ink: "#1f2933"
+  background:
+    light: white
+    dark: ink
+  foreground:
+    light: ink
+    dark: white
+  primary: hsg-green
+  secondary: hsg-blue
+  tertiary: hsg-coral
+  success: hsg-dark-green
+  warning: hsg-yellow
+  danger: hsg-coral
+  light: hsg-beige
+  dark: hsg-dark-green
+
+typography:
+  fonts:
+    - family: Arial
+      source: system
+    - family: Helvetica Neue
+      source: system
+    - family: Menlo
+      source: system
+  base:
+    family: Arial
+    line-height: 1.55
+  headings:
+    family: Arial
+    weight: 600
+    color: hsg-dark-green
+  monospace:
+    family: Menlo

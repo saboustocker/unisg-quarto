@@ -4,7 +4,7 @@ subtitle: "University of St.Gallen"
 author: "Author Name"
 date: last-modified
 format:
-  unisg-revealjs: default
+  unisg-slides-revealjs: default
 ---
 
 # Section {.section-header-bg .subtitle-section-header}

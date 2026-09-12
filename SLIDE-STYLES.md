@@ -1,6 +1,6 @@
 # UniSG reveal.js slide styles
 
-Reference for every class the `unisg-revealjs` format provides, and how to apply it.
+Reference for every class the `unisg-slides-revealjs` format provides, and how to apply it.
 
 Classes go in braces after a heading for slide-level styles, or on a fenced div
 for block-level styles:

@@ -5,4 +5,4 @@ project:
     - "*.qmd"
 
 format:
-  unisg-revealjs: default
+  unisg-slides-revealjs: default

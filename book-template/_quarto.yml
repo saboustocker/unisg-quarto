@@ -11,11 +11,11 @@ book:
   subtitle: "UniSG Quarto book"
   author: "Author Name"
   date: today
-  cover-image: _extensions/unisg/assets/logos/HSG_Logo_EN_RGB.svg
-  favicon: _extensions/unisg/assets/logos/unisg-logo.png
+  cover-image: _extensions/unisg-book/assets/logos/HSG_Logo_EN_RGB.svg
+  favicon: _extensions/unisg-book/assets/logos/unisg-logo.png
   search: true
   sidebar:
-    logo: _extensions/unisg/assets/logos/HSG_Logo_EN_RGB.svg
+    logo: _extensions/unisg-book/assets/logos/HSG_Logo_EN_RGB.svg
     style: docked
     collapse-level: 1
   chapters:

@@ -19,7 +19,7 @@ quarto add /path/to/unisg-quarto
 | Format | Use |
 |--------|-----|
 | `unisg-html` | website pages and reports |
-| `unisg-revealjs` | slides |
+| `unisg-slides-revealjs` | slides |
 | `unisg-pdf` | PDF manuscripts |
 | `unisg-docx` | Word manuscripts, APA reference doc |
 | `unisg-book-html` | books, HTML |
@@ -27,7 +27,7 @@ quarto add /path/to/unisg-quarto
 
 ```yaml
 format:
-  unisg-revealjs: default
+  unisg-slides-revealjs: default
 ```
 
 Book formats need `project: type: book`.

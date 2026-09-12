@@ -20,4 +20,4 @@ Use this page to list all slide decks that belong to the project.
 
 ## Add another deck
 
-Create a new `.qmd` file in `slides/`, use `format: unisg-revealjs`, and add it to the list above.
+Create a new `.qmd` file in `slides/`, use `format: unisg-slides-revealjs`, and add it to the list above.
